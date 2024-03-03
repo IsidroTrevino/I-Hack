@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, useWindowDimensions } from "react-native
 import CustomInput from "../../components/customInput";
 import CustomButton from "../../components/customButton/CustomButton";
 import Logo from '../../../assets/images/qualtia_logo.png'
+import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 
 const SignInScreen = () => {
@@ -10,12 +11,15 @@ const SignInScreen = () => {
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
 
+    const navigation = useNavigation();
+
     const onsSignInPress = () => {
-        console.log('Usuario:', user);
+        // validate User
+        navigation.navigate('Home');
     }
 
-    const onForgotPasswordPress = () => {
-        console.log('Olvidaste tu contraseña?');
+    const onCreateAccountPress = () => {
+        navigation.navigate('SignUp');
     }
     
   return (
@@ -24,7 +28,7 @@ const SignInScreen = () => {
         <CustomInput placeholder={'Usuario'} value={user} setValue={setUser} />
         <CustomInput placeholder={'Contraseña'} value={password} setValue={setPassword} secureTextEntry={true}/>
         <CustomButton text={'Ingresar'} onPress={onsSignInPress}/>
-        <CustomButton text={'Olvidaste tu contraseña?'} onPress={onForgotPasswordPress} type='tertiary'/>
+        <CustomButton text={'No tienes cuenta? Crea una aqui'} onPress={onCreateAccountPress} type='tertiary'/>
     </View>
   );
 }
@@ -33,6 +37,7 @@ const styles = StyleSheet.create({
     root: {
       alignItems: 'center',
       padding: 20,
+      paddingTop: 50,
     },
 
     logo: {
