@@ -1,35 +1,57 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
-import Logo from '../../../assets/images/qualtia_logo.png'
+import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
+import Logo from '../../../assets/images/qualtia_logo.png';
 import MenuIcon from 'react-native-vector-icons/FontAwesome';
 import CartIcon from 'react-native-vector-icons/Entypo';
+import { useNavigation } from '@react-navigation/native'; 
+import React from 'react';
 
+const Header = ({ leftIcon }) => {
+  const navigation = useNavigation();
 
-import React from 'react'
+  const onLeftIconPress = (iconName) => {
+    if (iconName === 'bars') {
+      console.log('menu');
+    } else if (iconName === 'arrow-left') {
+      navigation.navigate('Home');
+    }
+  };
 
-const onLeftIconPress = () => {
-    console.log('left icon pressed');
-}
+  const onCartIconPress = () => {
+    console.log('cart');
+  };
 
-const Header = ({leftIcon}) => {
   return (
     <View style={styles.root}>
-        <MenuIcon name={leftIcon} size={30} color="black" style={styles.burger_menu} onPress={onLeftIconPress}/>
-        <Image source={Logo} style={styles.logo} resizeMode='contain'/>
-        <CartIcon name='shopping-cart' size={30} color="black" style={styles.cart} />
+      <MenuIcon
+        name={leftIcon}
+        size={30}
+        color="black"
+        style={styles.burger_menu}
+        onPress={() => onLeftIconPress(leftIcon)}
+      />
+      <Image source={Logo} style={styles.logo} resizeMode='contain' />
+      <CartIcon
+        name='shopping-cart'
+        size={30}
+        color="black"
+        style={styles.cart}
+        onPress={onCartIconPress}
+      />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   root: {
     width: '100%',
     height: '15%',
-    backgroundColor: 'orange',
+    backgroundColor: '#273996',
     justifyContent: 'center',
-    alignItems: 'center',  
+    alignItems: 'center',
     paddingTop: 50,
     flexDirection: 'row',
   },
+
   logo: {
     maxHeight: 100,
     width: '40%',
@@ -46,7 +68,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 30,
     top: 78,
-  }
-})
+  },
+});
 
 export default Header;

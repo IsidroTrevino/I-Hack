@@ -37,7 +37,7 @@ const SignUpScreen = () => {
 
       <Text style={styles.text}>Al registrarte, aceptas nuestros <Text style={styles.link}>Terminos y condiciones</Text>.</Text>
 
-      <CustomButton text={'Ya tienes una cuenta? Ingresa Aquí!'} type={'tertiary'} onPress={onAlreadyHaveAccountPress}/>
+      <CustomButton text={'¿Ya tienes una cuenta? Ingresa Aquí!'} type={'tertiary'} onPress={onAlreadyHaveAccountPress}/>
     </View>
   )
 }
