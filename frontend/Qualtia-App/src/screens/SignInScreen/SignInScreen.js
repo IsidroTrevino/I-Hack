@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, useWindowDimensions, FlatList } from "react-native";
+import { View, Text, StyleSheet, Image, useWindowDimensions, FlatList, ScrollView } from "react-native";
 import CustomInput from "../../components/customInput";
 import CustomButton from "../../components/customButton/CustomButton";
 import Logo from '../../../assets/images/qualtia_logo.png'
@@ -45,25 +45,30 @@ const SignInScreen = () => {
     );
 
     return (
-        <View style={styles.root}>
-            <Image source={Mascota} style={styles.Mascota} />
-            <Image source={Logo} style={[styles.logo, { height: height * 0.3 }]} resizeMode="contain" />
-            <CustomInput placeholder={'Usuario'} value={user} setValue={setUser} />
-            <CustomInput placeholder={'Contraseña'} value={password} setValue={setPassword} secureTextEntry={true} />
-            <CustomButton text={'Ingresar'} onPress={onSignInPress} />
-            <CustomButton text={'¿No tienes cuenta? Crea una aquí'} onPress={onCreateAccountPress} type='secondary' />
-            <FlatList
-                data={data}
-                renderItem={renderItem}
-                keyExtractor={(item, index) => index.toString()}
-                numColumns={3}
-                style={styles.logoContainer}
-            />
-        </View>
+        <ScrollView contentContainerStyle={styles.scrollContainer}>
+            <View style={styles.root}>
+                <Image source={Mascota} style={styles.Mascota} />
+                <Image source={Logo} style={[styles.logo, { height: height * 0.3 }]} resizeMode="contain" />
+                <CustomInput placeholder={'Usuario'} value={user} setValue={setUser} />
+                <CustomInput placeholder={'Contraseña'} value={password} setValue={setPassword} secureTextEntry={true} />
+                <CustomButton text={'Ingresar'} onPress={onSignInPress} />
+                <CustomButton text={'¿No tienes cuenta? Crea una aquí'} onPress={onCreateAccountPress} type='secondary' />
+                <FlatList
+                    data={data}
+                    renderItem={renderItem}
+                    keyExtractor={(item, index) => index.toString()}
+                    numColumns={3}
+                    style={styles.logoContainer}
+                />
+            </View>
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
+    scrollContainer: {
+        flexGrow: 1,
+    },
     root: {
         alignItems: 'center',
         padding: 20,
