@@ -39,7 +39,6 @@ const HomeScreen = () => {
         <Card text={'Lácteos'} img={lacteos} onPress={onPressDairy}/>
         <Card text={'Food Solutions'} img={foodSolutions} onPress={onPressFoodSolutions}/>
       </ScrollView>
-      <Menu/>
     </View>
   )
 }

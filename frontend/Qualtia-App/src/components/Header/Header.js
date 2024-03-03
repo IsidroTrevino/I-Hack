@@ -11,7 +11,7 @@ const Header = ({ leftIcon }) => {
 
   const onLeftIconPress = (iconName) => {
     if (iconName === 'bars') {
-        <Menu/>
+        navigation.navigate('Menu');
     } else if (iconName === 'arrow-left') {
       navigation.navigate('Home');
     }
