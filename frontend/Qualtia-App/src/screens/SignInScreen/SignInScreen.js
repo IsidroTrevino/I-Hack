@@ -51,7 +51,7 @@ const SignInScreen = () => {
             <CustomInput placeholder={'Usuario'} value={user} setValue={setUser} />
             <CustomInput placeholder={'Contraseña'} value={password} setValue={setPassword} secureTextEntry={true} />
             <CustomButton text={'Ingresar'} onPress={onSignInPress} />
-            <CustomButton text={'¿No tienes cuenta? Crea una aquí'} onPress={onCreateAccountPress} type='tertiary' />
+            <CustomButton text={'¿No tienes cuenta? Crea una aquí'} onPress={onCreateAccountPress} type='secondary' />
             <FlatList
                 data={data}
                 renderItem={renderItem}

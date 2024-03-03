@@ -5,18 +5,22 @@ import Separator from '../../components/Separator';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 
-const Menu = () => {
+const MenuScreen = () => {
     const navigation = useNavigation();
 
     const onPressArrow = () => {
         navigation.goBack();
     }
 
+    const onProfilePress = () => {
+        navigation.navigate('Profile');
+    }
+
   return (
     <View style={[styles.container, styles.absolutePosition]}>
         <FeatherIcon name="arrow-left" size={30} color="black" style={styles.arrowLeft} onPress={onPressArrow}/>
         <Text style={styles.title}>Menú de opciones</Text>
-        <MenuOption icon={'account'} option={'Mi cuenta'} />
+        <MenuOption icon={'account'} option={'Mi cuenta'} onPress={onProfilePress}/>
         <Separator />
         <MenuOption icon={'brightness-percent'} option={'Promociones'} />
         <Separator />
@@ -33,7 +37,7 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default MenuScreen;
 
 const styles = StyleSheet.create({
   container: {

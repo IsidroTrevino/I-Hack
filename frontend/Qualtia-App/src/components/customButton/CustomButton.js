@@ -21,6 +21,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#273996',
   },
 
+  container_secondary: {
+    backgroundColor: 'white',
+    borderColor: '#273996',
+    borderWidth: 1,
+  },
+
   container_tertiary: {
     backgroundColor: '#FFC369',
     borderRadius: 20,
@@ -37,6 +43,10 @@ const styles = StyleSheet.create({
 
   text_tertiary: {
     color: 'gray',
+  },
+
+  text_secondary: {
+    color: '#aeacac',
   },
 });
 

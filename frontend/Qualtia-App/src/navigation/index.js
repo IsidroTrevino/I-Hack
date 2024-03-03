@@ -9,6 +9,7 @@ import DairyScreen from '../screens/DairyScreen';
 import FoodSolutionScreen from '../screens/FoodSolutionScreen';
 import MenuScreen from '../screens/MenuScreen';
 import CartScreen from '../screens/CartScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -27,6 +28,7 @@ const Stack = createNativeStackNavigator();
         <Stack.Screen name='FoodSolutions' component={FoodSolutionScreen}/>
         <Stack.Screen name='Menu' component={MenuScreen}/>
         <Stack.Screen name='Cart' component={CartScreen}/>
+        <Stack.Screen name='Profile' component={ProfileScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
