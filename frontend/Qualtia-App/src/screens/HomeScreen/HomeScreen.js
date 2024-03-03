@@ -5,6 +5,7 @@ import carne from '../../../assets/images/Carnes.png'
 import jamon from '../../../assets/images/jamon.jpeg'
 import lacteos from '../../../assets/images/queso.jpeg'
 import foodSolutions from '../../../assets/images/FoodSolutions.jpeg'
+import Menu from '../../components/Menu/Menu.js'
 import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 
@@ -38,6 +39,7 @@ const HomeScreen = () => {
         <Card text={'Lácteos'} img={lacteos} onPress={onPressDairy}/>
         <Card text={'Food Solutions'} img={foodSolutions} onPress={onPressFoodSolutions}/>
       </ScrollView>
+      <Menu/>
     </View>
   )
 }
