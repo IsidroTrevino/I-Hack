@@ -1,13 +1,13 @@
-import { View, Text, StyleSheet, Pressable } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet, Pressable } from 'react-native';
+import React from 'react';
 
-const CustomButton = ({ onPress, text, type = 'primary'}) => {
+const CustomButton = ({ onPress, text, type = 'primary' }) => {
   return (
     <Pressable onPress={onPress} style={[styles.container, styles[`container_${type}`]]}>
       <Text style={[styles.text, styles[`text_${type}`]]}>{text}</Text>
     </Pressable>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -22,6 +22,12 @@ const styles = StyleSheet.create({
   },
 
   container_tertiary: {
+    backgroundColor: '#FFC369',
+    borderRadius: 20,
+    width: '50%', 
+    height: 50,
+    resizeMode: 'contain',
+    justifyContent: 'center',
   },
 
   text: {
@@ -31,7 +37,7 @@ const styles = StyleSheet.create({
 
   text_tertiary: {
     color: 'gray',
-  }
-})
+  },
+});
 
-export default CustomButton
+export default CustomButton;

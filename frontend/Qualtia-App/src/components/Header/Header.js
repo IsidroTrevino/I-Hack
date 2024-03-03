@@ -13,12 +13,12 @@ const Header = ({ leftIcon }) => {
     if (iconName === 'bars') {
         navigation.navigate('Menu');
     } else if (iconName === 'arrow-left') {
-      navigation.navigate('Home');
+      navigation.goBack();
     }
   };
 
   const onCartIconPress = () => {
-    console.log('cart');
+    navigation.navigate('Cart');
   };
 
   return (

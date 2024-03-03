@@ -28,7 +28,7 @@ const Menu = () => {
         <Text style={styles.spacer}></Text>
         <MenuOption icon={'account-tie-voice'} option={'Soporte'} />
         <Separator />
-        <MenuOption icon={'crosshairs-question'} option={'Configuración'} />
+        <MenuOption icon={'crosshairs-question'} option={'Sobre Nosotros'} />
     </View>
   );
 };
