@@ -2,7 +2,7 @@ import { StyleSheet, Text, View , ScrollView} from 'react-native'
 import Header from '../../components/Header'
 import Card from '../../components/Card/Card'
 import Queso from '../../../assets/images/panela.jpeg'
-import QM from '../../../assets/images/verdaderomancheg.jpeg'
+import QM from '../../../assets/images/manchego.jpg'
 import React from 'react'
 
 const DairyScreen = () => {

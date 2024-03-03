@@ -3,7 +3,6 @@ import Logo from '../../../assets/images/qualtia_logo.png';
 import MenuIcon from 'react-native-vector-icons/FontAwesome';
 import CartIcon from 'react-native-vector-icons/Entypo';
 import { useNavigation } from '@react-navigation/native'; 
-import Menu from '../Menu';
 import React from 'react';
 
 const Header = ({ leftIcon }) => {
