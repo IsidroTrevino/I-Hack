@@ -5,7 +5,7 @@ import React from 'react'
 const HomeScreen = () => {
   return (
     <View style={styles.root}>
-      <Header/>
+      <Header leftIcon='bars'/>
     </View>
   )
 }

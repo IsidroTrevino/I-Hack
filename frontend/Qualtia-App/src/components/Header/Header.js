@@ -6,12 +6,16 @@ import CartIcon from 'react-native-vector-icons/Entypo';
 
 import React from 'react'
 
-const Header = () => {
+const onLeftIconPress = () => {
+    console.log('left icon pressed');
+}
+
+const Header = ({leftIcon}) => {
   return (
     <View style={styles.root}>
-        <MenuIcon name="bars" size={30} color="black" style={styles.burger_menu}/>
+        <MenuIcon name={leftIcon} size={30} color="black" style={styles.burger_menu} onPress={onLeftIconPress}/>
         <Image source={Logo} style={styles.logo} resizeMode='contain'/>
-        <CartIcon name='shopping-cart' size={30} color="black" style={styles.cart}/>
+        <CartIcon name='shopping-cart' size={30} color="black" style={styles.cart} />
     </View>
   )
 }
