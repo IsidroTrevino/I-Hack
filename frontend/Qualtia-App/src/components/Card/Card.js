@@ -1,13 +1,16 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
-const Card = ({ text, img, description, onPress }) => {
+const Card = ({ text, img, description, onPress, price, Touchable = true }) => {
+  const ContainerComponent = Touchable ? TouchableOpacity : View;
+
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <ContainerComponent style={styles.container} onPress={onPress}>
       <Text style={styles.text}>{text}</Text>
       <Image source={img} style={styles.image} />
       {description && <Text style={styles.description}>{description}</Text>}
-    </TouchableOpacity>
+      {price && <Text style={styles.price}>{price}</Text>}
+    </ContainerComponent>
   );
 };
 
@@ -33,6 +36,12 @@ const styles = StyleSheet.create({
   description: {
     padding: 10,
     fontSize: 12,
+  },
+  price: {
+    padding: 10,
+    fontSize: 15,
+    fontWeight: 'bold',
+    alignSelf: 'flex-end',
   },
 });
 
