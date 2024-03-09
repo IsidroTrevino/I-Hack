@@ -1,7 +1,5 @@
 create database qualtia;
 
-use qualtia;
-
 create table User(
 	id_user int NOT NULL AUTO_INCREMENT,
 	F_name VARCHAR(50) NOT NULL,
